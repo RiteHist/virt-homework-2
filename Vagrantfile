@@ -27,7 +27,7 @@ Vagrant.configure(2) do |config|
                 vb.customize ["modifyvm", :id, "--cpus", machine[:core]]
                 vb.name = machine[:hostname]
             end
-            node.vm.provision "shell", inline <<-EOF
+            node.vm.provision "shell", inline: <<-EOF
                 export DEBIAN_FRONTEND=noninteractive
                 sudo apt-get update
                 sudo apt-get install ca-certificates curl gnupg
