@@ -17,7 +17,7 @@ servers = [
 Vagrant.configure(2) do |config|
     config.vm.synced_folder ".", "/vagrant", disabled: false
     servers.each do |machine|
-        config.vm.define machine:[:hostname] do |node|
+        config.vm.define machine[:hostname] do |node|
             node.vm.box = ISO
             node.vm.hostname = machine[:hostname]
             node.vm.network "private_network", ip: machine[:ip]
