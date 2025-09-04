@@ -3,11 +3,11 @@ source "yandex" "debian_docker" {
     disk_size_gb = 10
     folder_id = "b1g3ce2ml8s4bt24vm77"
     image_description = "debian with docker"
-    image_name = "debian-11-docker"
-    source_image_family = "debian-11"
-    ssh_username = "RiteHist"
+    image_name = "debian-12-docker"
+    source_image_family = "debian-12"
+    ssh_username = "debian"
     subnet_id = "e9bj11dms269k5hhimjn"
-    token = "myass"
+    token = "ass"
     use_ipv4_nat = true
     zone = "ru-central1-a"
     instance_cores = 2
@@ -15,6 +15,7 @@ source "yandex" "debian_docker" {
     instance_mem_gb = 1
     preemptible = true
     platform_id = "standard-v3"
+    temporary_key_pair_type = "ed25519"
 
 }
 
@@ -24,7 +25,8 @@ build {
     provisioner "shell" {
         inline = [
             "sudo apt-get update",
-            "sudo apt-get install ca-certificates curl",
+            "sudo apt-get upgrade -y",
+            "sudo apt-get install -y ca-certificates",
             "sudo install -m 0755 -d /etc/apt/keyrings",
             "sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc",
             "sudo chmod a+r /etc/apt/keyrings/docker.asc",
