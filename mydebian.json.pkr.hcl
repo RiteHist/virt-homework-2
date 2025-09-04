@@ -1,14 +1,21 @@
 source "yandex" "debian_docker" {
     disk_type = "network-hdd"
+    disk_size_gb = 10
     folder_id = "b1g3ce2ml8s4bt24vm77"
     image_description = "debian with docker"
     image_name = "debian-11-docker"
     source_image_family = "debian-11"
-    ssh_username = "ritehist"
-    subnet_id = "e9bt09ap97ebdu50voem"
+    ssh_username = "RiteHist"
+    subnet_id = "enpg2clfvlm3g7ouii35"
     token = "myass"
     use_ipv4_nat = true
     zone = "ru-central1-a"
+    instance_cores = 2
+    instance_core_fraction = 20
+    instance_mem_gb = 1
+    preemtible = true
+    platform_id = "standard-v3"
+
 }
 
 build {
