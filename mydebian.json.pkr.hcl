@@ -6,7 +6,7 @@ source "yandex" "debian_docker" {
     image_name = "debian-11-docker"
     source_image_family = "debian-11"
     ssh_username = "RiteHist"
-    subnet_id = "enpg2clfvlm3g7ouii35"
+    subnet_id = "e9bj11dms269k5hhimjn"
     token = "myass"
     use_ipv4_nat = true
     zone = "ru-central1-a"
