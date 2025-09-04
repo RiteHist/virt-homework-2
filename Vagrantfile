@@ -37,7 +37,7 @@ Vagrant.configure(2) do |config|
 
                 echo \
                     "deb [arch=$(dpkg --print-acrhitecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-                    $(. /etc/os-release && echo "$VERSION_CODENAME") stable | \
+                    $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
                     sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
                 
                 sudo apt-get update
