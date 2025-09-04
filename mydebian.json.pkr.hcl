@@ -13,7 +13,7 @@ source "yandex" "debian_docker" {
     instance_cores = 2
     instance_core_fraction = 20
     instance_mem_gb = 1
-    preemtible = true
+    preemptible = true
     platform_id = "standard-v3"
 
 }
